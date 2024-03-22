@@ -10,6 +10,7 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
   updateComponentStatus(id: string, status: number): Observable<any> {
-    return this.http.put(`http://localhost:8080/api/componentes/${id}`, { elemento: 'foco1', status });
+    id = "65fd4b88622ac8070b3ba261"
+    return this.http.put(`http://localhost:8080/api/componentes/${id}`, { elemento: 'foco3', status });
   }
 }

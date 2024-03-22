@@ -20,23 +20,16 @@ export class ToggleSwitchComponent implements OnInit {
   }
 
   toggleSwitch1(event: any) {
-    this.toggleSwitch(event, this.apiService, '65e892c16124050600b87598'); // ID del foco1
+    this.toggleSwitch(event, this.toggleSwitch3ApiService, '65fd4b80622ac8070b3ba25f'); // ID del foco1
   }
 
-  toggleSwitch2(event: any) {
-    this.toggleSwitch(event, this.toggleSwitch2ApiService, '65f0ad18efdef611de4c99cf'); // ID del foco2
-  }
 
-  toggleSwitch3(event: any) {
-    this.toggleSwitch(event, this.toggleSwitch3ApiService, '65f0ad1fefdef611de4c99d0'); // ID del foco3
-  }
-
-  toggleSwitch(event: any, apiService: any, id: string) {
+  toggleSwitch(event: any, toggleSwitch3ApiService: any, id: string) {
     if (event.target instanceof HTMLInputElement) {
       const checked = event.target.checked;
       const status = checked ? 1 : 0;
 
-      apiService.updateComponentStatus(+id, status) // Convertir a número entero
+      toggleSwitch3ApiService.updateComponentStatus(+id, status) // Convertir a número entero
         .subscribe(
           () => {
             console.log('Estado actualizado correctamente');

@@ -9,8 +9,8 @@ export class ToggleSwitch3ApiService {
 
   constructor(private http: HttpClient) { }
 
-  updateComponentStatus(status: number): Observable<any> {
-    const id = '65f0ad1fefdef611de4c99d0'; // ID del elemento 'foco3'
-    return this.http.put(`http://localhost:8080/api/componentes/${id}`, { elemento: 'foco3', status });
+  updateComponentStatus(id: string, status: number): Observable<any> {
+    id = "65fd4b80622ac8070b3ba25f"
+    return this.http.put(`http://localhost:8080/api/componentes/${id}`, { elemento: 'foco1', status });
   }
 }
